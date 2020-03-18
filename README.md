@@ -1,8 +1,11 @@
-## And-Design Jalali DatePicker
-
+# And-Design Jalali DatePicker
+A wrapper for ant-design date picker and calendar to support Jalali calendar type with [Day.js](https://github.com/iamkun/dayjs)
+## Installation
 ```
 npm i antd-jalali
 ```
+
+## Usage
 
 ```diff
 - import { DatePicker, Calendar } from 'antd';
