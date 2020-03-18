@@ -1,6 +1,6 @@
 {
   "name": "antd-jalali",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A wrapper for ant-design datepicker and calendar to support Jalali calendar type.",
   "keywords": [
     "ant",
@@ -12,7 +12,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ant-design/ant-design"
+    "url": "https://github.com/saeedrahimi/antd-jalali"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
