@@ -15,7 +15,7 @@ npm i antd-jalali
 import React from "react";
 import ReactDOM from "react-dom";
 import { DatePicker, ConfigProvider } from "antd";
-import { DatePicker as DatePickerJalali } from "antd-jalali";
+import { DatePicker as DatePickerJalali, Calendar } from "antd-jalali";
 import fa_IR from "antd/lib/locale-provider/fa_IR";
 import "antd/dist/antd.css";
 import "./index.css";
@@ -27,6 +27,9 @@ ReactDOM.render(
         <br />
         <ConfigProvider locale={fa_IR}  direction="rtl">
         Jalali: <DatePickerJalali />
+        <br />
+        <br />
+         <Calendar />
         </ConfigProvider>
     </div>,
   document.getElementById("root")
