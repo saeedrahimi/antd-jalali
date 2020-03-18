@@ -1,14 +1,15 @@
 {
   "name": "antd-jalali",
   "version": "0.1.2",
-  "description": "A wrapper for ant-design datepicker and calendar to support Jalali calendar type.",
+  "description": "A wrapper for ant-design datepicker and calendar to support Jalali calendar type with dayjs.",
   "keywords": [
     "ant",
     "datepicker",
     "calendar",
     "jalali",
     "persian",
-    "shamsi"
+    "shamsi",
+    "dayjs"
   ],
   "repository": {
     "type": "git",

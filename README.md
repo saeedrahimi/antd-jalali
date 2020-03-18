@@ -1,5 +1,6 @@
 # And-Design Jalali DatePicker
-A wrapper for ant-design date picker and calendar to support Jalali calendar type with [Day.js](https://github.com/iamkun/dayjs)
+A wrapper for ant-design date picker and calendar to support Jalali calendar type with [Day.js](https://github.com/iamkun/dayjs) and [jalaliday](https://github.com/alibaba-aero/jalaliday)
+
 ## Installation
 ```
 npm i antd-jalali
@@ -7,21 +8,24 @@ npm i antd-jalali
 
 ## Usage
 
-```diff
-- import { DatePicker, Calendar } from 'antd';
+```ts
+import React from "react";
+import ReactDOM from "react-dom";
+import { DatePicker, ConfigProvider } from "antd";
+import { DatePicker as DatePickerJalali } from "antd-jalali";
+import fa_IR from "antd/lib/locale-provider/fa_IR";
+import "antd/dist/antd.css";
+import "./index.css";
 
-+ import { DatePicker, Calendar } from 'antd-jalali';
-
-const { MonthPicker, RangePicker, WeekPicker } = DatePicker;
-<div>
-    <DatePicker onChange={onChange} />
-    <br />
-    <MonthPicker onChange={onChange} placeholder="Select month" />
-    <br />
-    <RangePicker onChange={onChange} />
-    <br />
-    <WeekPicker onChange={onChange} placeholder="Select week" />
-    </div>
-    <Calendar onPanelChange={onPanelChange} />
-</div>
+ReactDOM.render(
+    <div className="App">
+        Gregorian: <DatePicker />
+        <br />
+        <br />
+        <ConfigProvider locale={fa_IR}  direction="rtl">
+        Jalali: <DatePickerJalali />
+        </ConfigProvider>
+    </div>,
+  document.getElementById("root")
+);
 ```
