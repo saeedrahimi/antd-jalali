@@ -15,6 +15,8 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "declaration": true,
+    "declarationMap": true,
     "jsx": "react",
     "outDir": "./dist"
   },
