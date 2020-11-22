@@ -1,11 +1,8 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "baseUrl": "../lib",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -17,10 +14,9 @@
     "isolatedModules": true,
     "declaration": true,
     "declarationMap": true,
+    "noImplicitAny": false,
     "jsx": "react",
-    "outDir": "./dist"
+    "outDir": "../dist"
   },
-  "include": [
-    "./src/**/*"
-  ]
+  "include": ["./**/*"]
 }

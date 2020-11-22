@@ -1,2 +1,4 @@
 tsconfig.json
+lib
+public
 src

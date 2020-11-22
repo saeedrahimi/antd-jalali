@@ -1,7 +1,7 @@
 import { Dayjs } from 'dayjs';
 import * as React from 'react';
 import DatePicker from './DatePicker';
-import { PickerTimeProps } from 'antd/lib/date-picker/generatePicker';
+import { PickerTimeProps } from 'antd/es/date-picker/generatePicker';
 import { Omit } from 'antd/lib/_util/type';
 
 export interface TimePickerProps extends Omit<PickerTimeProps<Dayjs>, 'picker'> {
