@@ -30,6 +30,7 @@ ReactDOM.render(
         <br />
         <ConfigProvider locale={fa_IR}  direction="rtl">
         Jalali: <DatePickerJalali />
+        Jalali RangePicker: <DatePickerJalali.RangePicker />
         <br />
         <br />
          <Calendar />
