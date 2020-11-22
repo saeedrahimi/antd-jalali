@@ -4,7 +4,8 @@ import "antd/dist/antd.css";
 import "./index.css";
 import {
   DatePicker, Space,
-  Radio, ConfigProvider
+  Radio, ConfigProvider,
+  Row, Col
 } from "antd";
 import fa_IR from 'antd/lib/locale/fa_IR';
 import en_US from 'antd/lib/locale/en_US';
@@ -29,35 +30,48 @@ const App = () => {
   }
 
   return (<>
-    <Space direction="vertical" size={12}>
-      <div style={{ marginBottom: 16 }}>
-        <span style={{ marginRight: 16 }}>Change direction of components: </span>
-        <Radio.Group defaultValue={direction} onChange={changeDirection}>
-          <Radio.Button key="ltr" value="ltr">
-            LTR
+    <Row justify="center">
+      <Col span={18}>
+
+        <Space direction="vertical" size={12}>
+          <h2> Ant-Design Jalali Date picker </h2>
+
+          <Space direction="horizontal" size={12}>
+            <div style={{ marginBottom: 16 }}>
+              <span style={{ marginRight: 16 }}>Change direction of components: </span>
+              <Radio.Group defaultValue={direction} onChange={changeDirection}>
+                <Radio.Button key="ltr" value="ltr">
+                  LTR
             </Radio.Button>
-          <Radio.Button key="rtl" value="rtl">
-            RTL
+                <Radio.Button key="rtl" value="rtl">
+                  RTL
             </Radio.Button>
-        </Radio.Group>
-        <Radio.Group defaultValue={locale} onChange={changeLocale}>
-          <Radio.Button key="en" value={en_US}>
-            EN
+              </Radio.Group>
+            </div>
+            <div style={{ marginBottom: 16 }}>
+              <span style={{ marginRight: 16 }}>Change locale of components: </span>
+              <Radio.Group defaultValue={locale} onChange={changeLocale}>
+                <Radio.Button key="en" value={en_US}>
+                  EN
             </Radio.Button>
-          <Radio.Button key="fa" value={fa_IR}>
-            FA_IR
+                <Radio.Button key="fa" value={fa_IR}>
+                  FA_IR
             </Radio.Button>
-        </Radio.Group>
-      </div>
-      <ConfigProvider locale={locale} direction={direction}>
-        <DatePicker />
-        Jalali: <DatePickerJalali direction="rtl" />
+              </Radio.Group>
+            </div>
+
+          </Space>
+          <ConfigProvider locale={locale} direction={direction}>
+            <Space direction="vertical" size={12}>
+              Gregorian: <DatePicker />
+         Jalali: <DatePickerJalali direction="rtl" />
         Jalali RangePicker: <DatePickerJalali.RangePicker />
-        <br />
-        <br />
-        <Calendar />
-      </ConfigProvider>
-    </Space>
+              <Calendar />
+            </Space>
+          </ConfigProvider>
+        </Space>
+      </Col>
+    </Row>
   </>)
 }
 ReactDOM.render(

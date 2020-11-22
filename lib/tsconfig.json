@@ -16,7 +16,7 @@
     "declarationMap": true,
     "noImplicitAny": false,
     "jsx": "react",
-    "outDir": "../dist"
+    "outDir": "../src/dist"
   },
   "include": ["./**/*"]
 }
