@@ -7,6 +7,10 @@ A wrapper for ant-design date picker and calendar to support Jalali calendar typ
 ## Demo
 [https://saeedrahimi.github.io/antd-jalali/](https://saeedrahimi.github.io/antd-jalali/)
 
+### Next.js example
+Repo: https://github.com/saeedrahimi/nextjs-antd-jalali-example
+Live Demo: https://nextjs-antd-jalali-example.vercel.app/
+
 ## Installation
 ```
 npm i antd-jalali
@@ -19,7 +23,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { DatePicker, ConfigProvider } from "antd";
 import { DatePicker as DatePickerJalali, Calendar } from "antd-jalali";
-import fa_IR from "antd/lib/locale-provider/fa_IR";
+import fa_IR from "antd/lib/locale/fa_IR";
+import en_US from "antd/lib/locale/en_US";
 import "antd/dist/antd.css";
 import "./index.css";
 
@@ -29,11 +34,11 @@ ReactDOM.render(
         <br />
         <br />
         <ConfigProvider locale={fa_IR}  direction="rtl">
-        Jalali: <DatePickerJalali />
-        Jalali RangePicker: <DatePickerJalali.RangePicker />
-        <br />
-        <br />
-         <Calendar />
+           Jalali: <DatePickerJalali />
+           Jalali RangePicker: <DatePickerJalali.RangePicker />
+           <br />
+           <br />
+           <Calendar />
         </ConfigProvider>
     </div>,
   document.getElementById("root")
