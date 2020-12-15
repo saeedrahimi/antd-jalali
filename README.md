@@ -44,3 +44,24 @@ ReactDOM.render(
   document.getElementById("root")
 );
 ```
+### How to set value  
+You should pass dayjs object with [jalali calendar](https://github.com/alibaba-aero/jalaliday)
+
+```jsx
+import dayjs from 'dayjs'
+
+// If you want to all new instanses of dayjs use jalali calendar, you can set default calendar
+dayjs.calendar('jalali');
+const date = dayjs("1399-01-01", {jalali:true});
+
+<DatePickerJalali defaultValue={date}/>
+<CalendarJalali  value={date}/>
+```
+also you can create a jalali date without changing default calendar
+
+```js
+const date = dayjs()
+const jalaliDate = date.calendar('jalali')
+```
+
+You can read more information about daysjs jalali on [jalaliday repo](https://github.com/alibaba-aero/jalaliday).
