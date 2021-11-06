@@ -19,7 +19,7 @@
     "type": "git",
     "url": "https://github.com/saeedrahimi/antd-jalali"
   },
-   "main": "./dist/cjs/index.js",
+  "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
   "typings": "./antd-jalali.d.ts",
