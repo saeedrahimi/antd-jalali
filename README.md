@@ -22,7 +22,7 @@ npm i antd-jalali
 import React from "react";
 import ReactDOM from "react-dom";
 import { DatePicker, ConfigProvider } from "antd";
-import { DatePicker as DatePickerJalali, Calendar } from "antd-jalali";
+import { DatePicker as DatePickerJalali, Calendar, JalaliLocaleListener } from "antd-jalali";
 import fa_IR from "antd/lib/locale/fa_IR";
 import en_US from "antd/lib/locale/en_US";
 import "antd/dist/antd.css";
@@ -34,6 +34,7 @@ ReactDOM.render(
         <br />
         <br />
         <ConfigProvider locale={fa_IR}  direction="rtl">
+          <JalaliLocaleListener/>
            Jalali: <DatePickerJalali />
            Jalali RangePicker: <DatePickerJalali.RangePicker />
            <br />
@@ -49,9 +50,16 @@ You should pass dayjs object with [jalali calendar](https://github.com/alibaba-a
 
 ```jsx
 import dayjs from 'dayjs'
+import { DatePicker as DatePickerJalali, Calendar as CalendarJalali, useJalaliLocaleListener } from "antd-jalali";
 
-// If you want to all new instanses of dayjs use jalali calendar, you can set default calendar
+// You should call this hook in child component of <ConfigProvider>
+// You can also use component helper for this hook <JalaliLocaleListener> 
+useJalaliLocaleListener();
+
+// If you want to all new instanses of dayjs use jalali calendar (no matter what is the locale), 
+// you can set default calendar for dayjs and remove useJalaliLocaleListener hook.
 dayjs.calendar('jalali');
+
 const date = dayjs("1399-01-01", {jalali:true});
 
 <DatePickerJalali defaultValue={date}/>

@@ -1,13 +1,9 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "esnext",
+    "module": "ES2020",
     "baseUrl": "./src",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -20,12 +16,9 @@
     "declarationMap": true,
     "noImplicitAny": false,
     "jsx": "react",
-    "outDir": "dist/esm",
-    "skipLibCheck": true,
-    "noFallthroughCasesInSwitch": true,
-    "noEmit": true
+    "outDir": "es"
   },
-  "include": [
-    "./src/**/*"
-  ]
+  "include": ["./src/**/*"],
+  "exclude": ["./src/index.js"]
 }
+

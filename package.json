@@ -1,6 +1,6 @@
 {
   "name": "antd-jalali",
-  "version": "0.9.3",
+  "version": "1.0.3",
   "description": "A wrapper for ant-design datepicker and calendar to support Jalali calendar type with dayjs.",
   "keywords": [
     "ant",
@@ -13,43 +13,45 @@
     "khorshidi"
   ],
   "author": "SaeedRahimi",
-  "homepage" : "https://saeedrahimi.github.io/antd-jalali",
+  "homepage": "https://saeedrahimi.github.io/antd-jalali",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/saeedrahimi/antd-jalali"
   },
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
-  "types": "./dist/esm/index.d.ts",
-  "typings": "./antd-jalali.d.ts",
+  
+  "main": "lib/cjs/index.cjs.js",
+  "module": "lib/esm/index.js",
+  "types": "lib/types/index.d.ts",
   "files": [
-    "dist/",
-    "antd-jalali.d.ts"
+    "lib",
+    "README.md"
   ],
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "build:lib": " tsc -p ./tsconfig.json && tsc -p ./tsconfig-cjs.json"
+    "build:demo": "react-scripts build",
+    "ts-declaration": " tsc -p ./tsconfig.lib.json --emitDeclarationOnly --outDir lib/types",
+    "build": "rimraf lib && node ./esbuild.js && npm run ts-declaration"
   },
   "dependencies": {
-    "dayjs": "^1.9.6",
+    "dayjs": "^1.10.8",
     "jalaliday": "^2.3.0",
-    "rc-picker": "^2.4.1"
+    "rc-picker": "^2.6.4"
   },
   "peerDependencies": {
-    "antd": "^4.8.4",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "antd": "^4.18.9",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "antd": "^4.8.4",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "@types/react": "^16.9.21",
-    "@types/react-dom": "^16.9.5",
+    "antd": "^4.18.9",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.13",
     "typescript": "~4.0.0",
-    "react-scripts": "latest"
+    "react-scripts": "5.0.0",
+    "esbuild": "^0.14.24"
   },
   "browserslist": {
     "production": [

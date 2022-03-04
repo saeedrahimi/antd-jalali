@@ -44,6 +44,4 @@ const locale = {
   }
 };
 
-dayjs.locale(locale, undefined, true);
-
 export default locale;
