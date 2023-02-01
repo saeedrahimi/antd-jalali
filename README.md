@@ -1,19 +1,19 @@
-[![npm (scoped with tag)](https://img.shields.io/npm/v/antd-jalali/latest.svg?style=flat-square)](https://npmjs.com/package/antd-jalali)
-[![npm](https://img.shields.io/npm/dt/antd-jalali.svg?style=flat-square)](https://npmjs.com/package/antd-jalali)
+[![npm (scoped with tag)](https://img.shields.io/npm/v/antd-jalali-plus/latest.svg?style=flat-square)](https://npmjs.com/package/antd-jalali-plus)
+[![npm](https://img.shields.io/npm/dt/antd-jalali-plus.svg?style=flat-square)](https://npmjs.com/package/antd-jalali-plus)
 
 # Ant-Design Jalali DatePicker
 A wrapper for ant-design date picker and calendar to support Jalali calendar type with [Day.js](https://github.com/iamkun/dayjs) and [jalaliday](https://github.com/alibaba-aero/jalaliday)
 
 ## Demo
-[https://saeedrahimi.github.io/antd-jalali/](https://saeedrahimi.github.io/antd-jalali/)
+[https://saeedrahimi.github.io/antd-jalali-plus/](https://saeedrahimi.github.io/antd-jalali-plus/)
 
 ### Next.js example
-Repo: https://github.com/saeedrahimi/nextjs-antd-jalali-example
-Live Demo: https://nextjs-antd-jalali-example.vercel.app/
+Repo: https://github.com/saeedrahimi/nextjs-antd-jalali-plus-example
+Live Demo: https://nextjs-antd-jalali-plus-example.vercel.app/
 
 ## Installation
 ```
-npm i antd-jalali
+npm i antd-jalali-plus
 ```
 
 ## Usage
@@ -22,7 +22,7 @@ npm i antd-jalali
 import React from "react";
 import ReactDOM from "react-dom";
 import { DatePicker, ConfigProvider } from "antd";
-import { DatePicker as DatePickerJalali, Calendar, JalaliLocaleListener } from "antd-jalali";
+import { DatePicker as DatePickerJalali, Calendar, JalaliLocaleListener } from "antd-jalali-plus";
 import fa_IR from "antd/lib/locale/fa_IR";
 import en_US from "antd/lib/locale/en_US";
 import "antd/dist/antd.css";
@@ -50,7 +50,7 @@ You should pass dayjs object with [jalali calendar](https://github.com/alibaba-a
 
 ```jsx
 import dayjs from 'dayjs'
-import { DatePicker as DatePickerJalali, Calendar as CalendarJalali, useJalaliLocaleListener } from "antd-jalali";
+import { DatePicker as DatePickerJalali, Calendar as CalendarJalali, useJalaliLocaleListener } from "antd-jalali-plus";
 
 // You should call this hook in child component of <ConfigProvider>
 // You can also use component helper for this hook <JalaliLocaleListener> 
