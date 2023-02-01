@@ -1,6 +1,6 @@
 {
-  "name": "antd-jalali",
-  "version": "1.0.3",
+  "name": "antd-jalali-plus",
+  "version": "1.1.0",
   "description": "A wrapper for ant-design datepicker and calendar to support Jalali calendar type with dayjs.",
   "keywords": [
     "ant",
@@ -12,14 +12,13 @@
     "dayjs",
     "khorshidi"
   ],
-  "author": "SaeedRahimi",
-  "homepage": "https://saeedrahimi.github.io/antd-jalali",
+  "author": "MasoudIT",
+  "homepage": "https://github.com/masoudit/antd-jalali",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/saeedrahimi/antd-jalali"
+    "url": "https://github.com/masoudit/antd-jalali"
   },
-  
   "main": "lib/cjs/index.cjs.js",
   "module": "lib/esm/index.js",
   "types": "lib/types/index.d.ts",

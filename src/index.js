@@ -7,7 +7,10 @@ import en_US from "antd/lib/locale/en_US";
 import { DatePicker as DatePickerJalali, Calendar, JalaliLocaleListener } from "./index.ts";
 
 import dayjs from "dayjs";
+// const date = dayjs(new Date(), { jalali: true });
+const date = dayjs().calendar('jalali').locale('en').format('DD MMMM YYYY dddd');
 
+console.log('date-------', date);
 // If you want to all new instanses of dayjs use jalali calendar, you can set default calendar
 // dayjs.calendar("jalali");
 

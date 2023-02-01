@@ -18,7 +18,7 @@ dayjs.extend(weekOfYear);
 dayjs.extend(weekYear);
 dayjs.extend(jalaliday);
 
-dayjs.locale(faLocale, undefined, false);
+dayjs.locale(faLocale, undefined, true);
 
 dayjs.extend((o, c) => {
   // todo support Wo (ISO week)
