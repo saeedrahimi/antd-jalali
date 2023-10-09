@@ -91,7 +91,6 @@ const generateJalaliConfig: GenerateConfig<Dayjs> = {
     getShortMonths: (locale) => dayjs().locale(parseLocale(locale)).localeData().monthsShort(),
     format: (locale, date, format) => date.locale(parseLocale(locale)).format(format),
     parse: (locale, text, formats) => {
-      console.log(locale, text);
       const localeStr = parseLocale(locale);
       for (let i = 0; i < formats.length; i += 1) {
         const format = formats[i];
