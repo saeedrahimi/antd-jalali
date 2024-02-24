@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "antd/dist/antd.min.css";
 import { DatePicker, Space, Radio, ConfigProvider, Row, Col } from "antd";
 import fa_IR from "antd/lib/locale/fa_IR";
 import en_US from "antd/lib/locale/en_US";
