@@ -46,10 +46,13 @@ const parseLocale = (locale: string) => {
 
 const parseNoMatchNotice = () => {
   /* istanbul ignore next */
-  noteOnce(false, "Not match any format. Please help to fire a issue about this.");
+  noteOnce(
+    false,
+    "Not match any format. Please help to fire a issue about this."
+  );
 };
 
-const generateJalaliConfig: GenerateConfig<Dayjs> = {
+const generateJalaliConfig = {
   // get
   getNow: () => dayjs(),
   getFixedDate: (string) => dayjs(string, "YYYY-MM-DD"),
@@ -79,17 +82,25 @@ const generateJalaliConfig: GenerateConfig<Dayjs> = {
   setMinute: (date, minute) => date.minute(minute),
   setSecond: (date, second) => date.second(second),
 
+  getMillisecond: (date) => date.millisecond(),
+  setMillisecond: (date, second) => date.millisecond(second),
+
   // Compare
   isAfter: (date1, date2) => date1.isAfter(date2),
   isValidate: (date) => date.isValid(),
 
   locale: {
-    getWeekFirstDate:(locale, date) => date.locale(parseLocale(locale)).weekday(0),
-    getWeekFirstDay: (locale) => dayjs().locale(parseLocale(locale)).localeData().firstDayOfWeek(),
+    getWeekFirstDate: (locale, date) =>
+      date.locale(parseLocale(locale)).weekday(0),
+    getWeekFirstDay: (locale) =>
+      dayjs().locale(parseLocale(locale)).localeData().firstDayOfWeek(),
     getWeek: (locale, date) => date.locale(parseLocale(locale)).week(),
-    getShortWeekDays: (locale) => dayjs().locale(parseLocale(locale)).localeData().weekdaysMin(),
-    getShortMonths: (locale) => dayjs().locale(parseLocale(locale)).localeData().monthsShort(),
-    format: (locale, date, format) => date.locale(parseLocale(locale)).format(format),
+    getShortWeekDays: (locale) =>
+      dayjs().locale(parseLocale(locale)).localeData().weekdaysMin(),
+    getShortMonths: (locale) =>
+      dayjs().locale(parseLocale(locale)).localeData().monthsShort(),
+    format: (locale, date, format) =>
+      date.locale(parseLocale(locale)).format(format),
     parse: (locale, text, formats) => {
       console.log(locale, text);
       const localeStr = parseLocale(locale);
@@ -100,7 +111,9 @@ const generateJalaliConfig: GenerateConfig<Dayjs> = {
           // parse Wo
           const year = formatText.split("-")[0];
           const weekStr = formatText.split("-")[1];
-          const firstWeek = dayjs(year, "YYYY").startOf("year").locale(localeStr);
+          const firstWeek = dayjs(year, "YYYY")
+            .startOf("year")
+            .locale(localeStr);
           for (let j = 0; j <= 52; j += 1) {
             const nextWeek = firstWeek.add(j, "week");
             if (nextWeek.format("Wo") === weekStr) {

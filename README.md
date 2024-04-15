@@ -1,15 +1,22 @@
-[![npm (scoped with tag)](https://img.shields.io/npm/v/antd-jalali-plus/latest.svg?style=flat-square)](https://npmjs.com/package/antd-jalali-plus)
-[![npm](https://img.shields.io/npm/dt/antd-jalali-plus.svg?style=flat-square)](https://npmjs.com/package/antd-jalali-plus)
 
 # Ant-Design Jalali DatePicker
 A wrapper for ant-design date picker and calendar to support Jalali calendar type with [Day.js](https://github.com/iamkun/dayjs) and [jalaliday](https://github.com/alibaba-aero/jalaliday)
 
-## Demo
-[https://saeedrahimi.github.io/antd-jalali-plus/](https://saeedrahimi.github.io/antd-jalali-plus/)
+#### Note:
+antd-jalali-plus is a forked and upgraded version of [antd-jalali](https://www.npmjs.com/package/antd-jalali), which was a valuable tool but is no longer maintained.
 
-### Next.js example
-Repo: https://github.com/saeedrahimi/nextjs-antd-jalali-plus-example
-Live Demo: https://nextjs-antd-jalali-plus-example.vercel.app/
+#### Purpose:
+The primary goal of antd-jalali-plus is to ensure that users who rely on the functionality of antd-jalali continue to have access to a reliable and supported solution with latest version of [Ant design](https://ant.design/). By taking over maintenance responsibilities, We are committed to providing timely updates, bug fixes, and improvements to enhance the overall usability and stability of the package.
+
+## Ant version 5.x.x
+```
+npm i antd-jalali-plus@v1.4.x
+```
+
+## Ant version 4.x.x
+```
+npm i antd-jalali-plus@v1.3.x
+```
 
 ## Installation
 ```
