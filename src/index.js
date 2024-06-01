@@ -11,6 +11,8 @@ const date = dayjs().calendar('jalali').locale('en').format('DD MMMM YYYY dddd')
 // If you want to all new instanses of dayjs use jalali calendar, you can set default calendar
 // dayjs.calendar("jalali");
 
+import './index.css'
+
 const App = () => {
   const [direction, setDirection] = React.useState("rtl");
   const [locale, setLocale] = React.useState(fa_IR);
@@ -66,7 +68,7 @@ const App = () => {
               <Space direction="vertical" size={12}>
                 Gregorian: <DatePicker />
                 Jalali: <DatePickerJalali direction="rtl" />
-                Jalali RangePicker: <DatePickerJalali.RangePicker />
+                Jalali RangePicker: <DatePickerJalali.RangePicker  />
                 <Calendar />
               </Space>
             </ConfigProvider>
