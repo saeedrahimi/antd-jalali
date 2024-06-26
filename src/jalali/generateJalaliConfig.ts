@@ -7,7 +7,6 @@ import weekOfYear from "dayjs/plugin/weekOfYear";
 import weekYear from "dayjs/plugin/weekYear";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import customParseFormat from "dayjs/plugin/customParseFormat";
-import { GenerateConfig } from "rc-picker/lib/generate";
 import { default as faLocale } from "./locale";
 
 dayjs.extend(customParseFormat);
@@ -18,7 +17,7 @@ dayjs.extend(weekOfYear);
 dayjs.extend(weekYear);
 dayjs.extend(jalaliday);
 
-dayjs.locale(faLocale, undefined, false);
+dayjs.locale(faLocale, undefined, true);
 
 dayjs.extend((o, c) => {
   // todo support Wo (ISO week)
@@ -49,7 +48,7 @@ const parseNoMatchNotice = () => {
   noteOnce(false, "Not match any format. Please help to fire a issue about this.");
 };
 
-const generateJalaliConfig: GenerateConfig<Dayjs> = {
+const generateJalaliConfig = {
   // get
   getNow: () => dayjs(),
   getFixedDate: (string) => dayjs(string, "YYYY-MM-DD"),
@@ -79,20 +78,27 @@ const generateJalaliConfig: GenerateConfig<Dayjs> = {
   setMinute: (date, minute) => date.minute(minute),
   setSecond: (date, second) => date.second(second),
 
+  getMillisecond: (date) => date.millisecond(),
+  setMillisecond: (date, second) => date.millisecond(second),
+
   // Compare
   isAfter: (date1, date2) => date1.isAfter(date2),
   isValidate: (date) => date.isValid(),
 
   locale: {
-    getWeekFirstDate:(locale, date) => date.locale(parseLocale(locale)).weekday(0),
+    getWeekFirstDate: (locale, date) => date.locale(parseLocale(locale)).weekday(0),
     getWeekFirstDay: (locale) => dayjs().locale(parseLocale(locale)).localeData().firstDayOfWeek(),
     getWeek: (locale, date) => date.locale(parseLocale(locale)).week(),
     getShortWeekDays: (locale) => dayjs().locale(parseLocale(locale)).localeData().weekdaysMin(),
     getShortMonths: (locale) => dayjs().locale(parseLocale(locale)).localeData().monthsShort(),
-    format: (locale, date, format) => date.locale(parseLocale(locale)).format(format),
+    format: (locale, date, format) => {
+      return date.locale(parseLocale(locale)).format(format);
+    },
     parse: (locale, text, formats) => {
-      console.log(locale, text);
+      if (text.length !== 10) return null;
+
       const localeStr = parseLocale(locale);
+
       for (let i = 0; i < formats.length; i += 1) {
         const format = formats[i];
         const formatText = text;
@@ -110,7 +116,14 @@ const generateJalaliConfig: GenerateConfig<Dayjs> = {
           parseNoMatchNotice();
           return null;
         }
-        const date = dayjs(formatText, format).locale(localeStr);
+
+        const date = dayjs(formatText, {
+          format,
+          locale: "fa_IR",
+          //  @ts-ignore
+          jalali: true,
+        }).locale(localeStr);
+
         if (date.isValid()) {
           return date;
         }

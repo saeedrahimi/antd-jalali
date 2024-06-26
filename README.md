@@ -2,16 +2,21 @@
 [![npm](https://img.shields.io/npm/dt/antd-jalali.svg?style=flat-square)](https://npmjs.com/package/antd-jalali)
 
 # Ant-Design Jalali DatePicker
+
 A wrapper for ant-design date picker and calendar to support Jalali calendar type with [Day.js](https://github.com/iamkun/dayjs) and [jalaliday](https://github.com/alibaba-aero/jalaliday)
 
 ## Demo
+
 [https://saeedrahimi.github.io/antd-jalali/](https://saeedrahimi.github.io/antd-jalali/)
 
-### Next.js example
-Repo: https://github.com/saeedrahimi/nextjs-antd-jalali-example
-Live Demo: https://nextjs-antd-jalali-example.vercel.app/
+## Top Features
+
+- Support Ant Design Version 5
+- Support React 16/17/18
+- Fix All RTL Issues
 
 ## Installation
+
 ```
 npm i antd-jalali
 ```
@@ -29,23 +34,25 @@ import "antd/dist/antd.css";
 import "./index.css";
 
 ReactDOM.render(
-    <div className="App">
-        Gregorian: <DatePicker />
-        <br />
-        <br />
-        <ConfigProvider locale={fa_IR}  direction="rtl">
-          <JalaliLocaleListener/>
-           Jalali: <DatePickerJalali />
-           Jalali RangePicker: <DatePickerJalali.RangePicker />
-           <br />
-           <br />
-           <Calendar />
-        </ConfigProvider>
-    </div>,
+  <div className="App">
+    Gregorian: <DatePicker />
+    <br />
+    <br />
+    <ConfigProvider locale={fa_IR} direction="rtl">
+      <JalaliLocaleListener />
+      Jalali: <DatePickerJalali />
+      Jalali RangePicker: <DatePickerJalali.RangePicker />
+      <br />
+      <br />
+      <Calendar />
+    </ConfigProvider>
+  </div>,
   document.getElementById("root")
 );
 ```
-### How to set value  
+
+### How to set value
+
 You should pass dayjs object with [jalali calendar](https://github.com/alibaba-aero/jalaliday)
 
 ```jsx
@@ -53,10 +60,10 @@ import dayjs from 'dayjs'
 import { DatePicker as DatePickerJalali, Calendar as CalendarJalali, useJalaliLocaleListener } from "antd-jalali";
 
 // You should call this hook in child component of <ConfigProvider>
-// You can also use component helper for this hook <JalaliLocaleListener> 
+// You can also use component helper for this hook <JalaliLocaleListener>
 useJalaliLocaleListener();
 
-// If you want to all new instanses of dayjs use jalali calendar (no matter what is the locale), 
+// If you want to all new instanses of dayjs use jalali calendar (no matter what is the locale),
 // you can set default calendar for dayjs and remove useJalaliLocaleListener hook.
 dayjs.calendar('jalali');
 
@@ -65,11 +72,19 @@ const date = dayjs("1399-01-01", {jalali:true});
 <DatePickerJalali defaultValue={date}/>
 <CalendarJalali  value={date}/>
 ```
+
 also you can create a jalali date without changing default calendar
 
 ```js
-const date = dayjs()
-const jalaliDate = date.calendar('jalali')
+const date = dayjs();
+const jalaliDate = date.calendar("jalali");
 ```
 
 You can read more information about daysjs jalali on [jalaliday repo](https://github.com/alibaba-aero/jalaliday).
+
+## Contributors
+
+<a href="https://github.com/masoudit">
+<img src="https://github.com/masoudit.png" width="60px;"/></a></sub>
+<a href="https://github.com/hamidrezaghanbari">
+<img src="https://github.com/hamidrezaghanbari.png" width="60px;"/></a>
