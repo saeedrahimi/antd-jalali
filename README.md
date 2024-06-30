@@ -11,14 +11,22 @@ A wrapper for ant-design date picker and calendar to support Jalali calendar typ
 
 ## Top Features
 
-- Support Ant Design Version 5
+- Support Ant Design Version 4 and 5
 - Support React 16/17/18
 - Fix All RTL Issues
 
 ## Installation
 
+### Ant version 5.x.x
+
 ```
-npm i antd-jalali
+npm i antd-jalali@v2.x.x
+```
+
+### Ant version 4.x.x
+
+```
+npm i antd-jalali@v1.4.x
 ```
 
 ## Usage
@@ -84,7 +92,11 @@ You can read more information about daysjs jalali on [jalaliday repo](https://gi
 
 ## Contributors
 
+<a href="https://github.com/saeedrahimi">
+<img src="https://github.com/saeedrahimi.png" width="60px;"/></a>
 <a href="https://github.com/masoudit">
-<img src="https://github.com/masoudit.png" width="60px;"/></a></sub>
+<img src="https://github.com/masoudit.png" width="60px;"/></a>
 <a href="https://github.com/hamidrezaghanbari">
 <img src="https://github.com/hamidrezaghanbari.png" width="60px;"/></a>
+<a href="https://github.com/mohas">
+<img src="https://github.com/mohas.png" width="60px;"/></a>
