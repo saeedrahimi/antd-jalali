@@ -1,38 +1,24 @@
 import React from "react";
-import { createRoot } from "react-dom/client";
 import { DatePicker, Space, Radio, ConfigProvider, Row, Col } from "antd";
+import type { DirectionType } from "antd/lib/config-provider";
 import fa_IR from "antd/lib/locale/fa_IR";
 import en_US from "antd/lib/locale/en_US";
 import { DatePicker as DatePickerJalali, Calendar, JalaliLocaleListener } from "./index.ts";
-import dayjs from "dayjs";
-// const date = dayjs(new Date(), { jalali: true });
-const date = dayjs().calendar("jalali").locale("en").format("DD MMMM YYYY dddd");
-
-// If you want to all new instanses of dayjs use jalali calendar, you can set default calendar
-dayjs.extend(jalaliday);
-
-import jalaliday from "jalaliday";
-
-dayjs.calendar("jalali");
-
 import "./index.css";
+import { RadioChangeEvent } from "antd/lib";
 
 const App = () => {
-  const [direction, setDirection] = React.useState("rtl");
+  const [direction, setDirection] = React.useState<DirectionType>("rtl");
   const [locale, setLocale] = React.useState(fa_IR);
 
-  const changeDirection = (e) => {
+  const changeDirection = (e: RadioChangeEvent) => {
     const directionValue = e.target.value;
     setDirection(directionValue);
-    console.log("changeDirection: locale:  ", locale);
   };
-  const changeLocale = (e) => {
+  const changeLocale = (e: RadioChangeEvent) => {
     const localeValue = e.target.value;
     setLocale(localeValue);
   };
-  function onOk(value) {
-    console.log("onOk: ", value);
-  }
 
   return (
     <>
@@ -82,6 +68,4 @@ const App = () => {
   );
 };
 
-const container = document.getElementById("container");
-const root = createRoot(container); // createRoot(container!) if you use TypeScript
-root.render(<App />);
+export default App;

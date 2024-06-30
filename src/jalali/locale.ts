@@ -1,6 +1,4 @@
 // Persian [fa]
-import dayjs from "dayjs";
-
 const locale = {
   name: "fa",
   weekdays: "یک‌شنبه_دوشنبه_سه‌شنبه_چهارشنبه_پنج‌شنبه_جمعه_شنبه".split("_"),

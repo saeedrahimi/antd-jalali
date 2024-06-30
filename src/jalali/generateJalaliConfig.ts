@@ -48,6 +48,13 @@ const parseNoMatchNotice = () => {
   noteOnce(false, "Not match any format. Please help to fire a issue about this.");
 };
 
+const e2p = (locale, input) => {
+  if (locale === "fa_IR") {
+    return input.replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[d]);
+  }
+  return input;
+};
+
 const generateJalaliConfig = {
   // get
   getNow: () => dayjs(),
@@ -84,7 +91,6 @@ const generateJalaliConfig = {
   // Compare
   isAfter: (date1, date2) => date1.isAfter(date2),
   isValidate: (date) => date.isValid(),
-
   locale: {
     getWeekFirstDate: (locale, date) => date.locale(parseLocale(locale)).weekday(0),
     getWeekFirstDay: (locale) => dayjs().locale(parseLocale(locale)).localeData().firstDayOfWeek(),
@@ -92,7 +98,7 @@ const generateJalaliConfig = {
     getShortWeekDays: (locale) => dayjs().locale(parseLocale(locale)).localeData().weekdaysMin(),
     getShortMonths: (locale) => dayjs().locale(parseLocale(locale)).localeData().monthsShort(),
     format: (locale, date, format) => {
-      return date.locale(parseLocale(locale)).format(format);
+      return e2p(locale, date.locale(parseLocale(locale)).format(format));
     },
     parse: (locale, text, formats) => {
       if (text.length !== 10) return null;
