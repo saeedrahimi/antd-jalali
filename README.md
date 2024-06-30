@@ -67,7 +67,7 @@ useJalaliLocaleListener();
 // you can set default calendar for dayjs and remove useJalaliLocaleListener hook.
 dayjs.calendar('jalali');
 
-const date = dayjs("1399-01-01", {jalali:true});
+const date = dayjs("1403-01-01", {jalali:true});
 
 <DatePickerJalali defaultValue={date}/>
 <CalendarJalali  value={date}/>
