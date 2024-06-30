@@ -1,6 +1,6 @@
 {
   "name": "antd-jalali",
-  "version": "1.4.1",
+  "version": "1.4.3",
   "description": "A wrapper for ant-design datepicker and calendar to support Jalali calendar type with dayjs.",
   "keywords": [
     "ant",
