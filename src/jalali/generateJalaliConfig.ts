@@ -1,5 +1,5 @@
 import dayjs, { Dayjs } from "dayjs";
-import jalaliday from "jalaliday";
+import jalaliday from "jalali-plugin-dayjs";
 import { noteOnce } from "rc-util/lib/warning";
 import weekday from "dayjs/plugin/weekday";
 import localeData from "dayjs/plugin/localeData";

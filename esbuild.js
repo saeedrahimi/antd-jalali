@@ -19,7 +19,7 @@ esbuild
     splitting: true,
     format: 'esm',
     target: ['esnext'],
-    external: ['antd','react','dayjs','jalaliday','rc-picker'],
+    external: ['antd','react','dayjs','jalali-plugin-dayjs','rc-picker'],
   })
   .catch(() => process.exit(1));
 
@@ -32,7 +32,7 @@ esbuild
     minify: true,
     platform: 'node',
     target: ['node16'],
-    external: ['antd','react','dayjs','jalaliday','rc-picker'],
+    external: ['antd','react','dayjs','jalali-plugin-dayjs','rc-picker'],
   })
   .catch(() => process.exit(1));
 

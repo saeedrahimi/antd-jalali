@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "dayjs": "^1.11.10",
-    "jalaliday": "^2.3.0",
+    "jalali-plugin-dayjs": "^1.1.4",
     "rc-picker": "^4.6.6"
   },
   "peerDependencies": {
