@@ -16,7 +16,7 @@ const useJalaliLocaleListener = () => {
     if (locale?.locale == "fa") {
       dayjs["calendar"]?.("jalali");
     } else {
-      dayjs["calendar"]?.(undefined);
+      dayjs["calendar"]?.("jalali");
     }
   }, [locale]);
 };
